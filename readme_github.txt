@@ -7,7 +7,7 @@ ssh-keygen -t rsa -b 4096 -C "yuan_guoan@163.com" // 生产密匙, 直接找到�
 //添加密钥
  /c/Users/Administrator/.ssh
 cat  /c/Users/Administrator/.ssh/id_rsa.pub  //或者~/..sh
-eval $(ssh-agent -s)      //容易出问题的地方，启动ssh -agent，不然会ssh-add失败
+eval $(ssh-agent -s)      //容易出问题的地方，启动代理 ssh -agent，不然会ssh-add失败
 ssh-add ~/.ssh/id_rsa  // 重要！！！将私钥加入git
 
 //本地设置
@@ -22,7 +22,7 @@ git commit -m "first commit" 创建commit
 
 git remote add origin git@github.com:q315237943/TestDemo.git  	// 指向远程仓库<name><url>，git remote rm origin 删除
 git remote -v                    				//查看仓库origin 类型
-git push --set-upstream origin master  				//将origin（远程仓库）设置为supstream。出现rejected,								使用 git push --force --set-upstream origin master
+git push --set-upstream origin master  				//将origin（远程仓库）设置为supstream。出现rejected,使用 git push --force --set-upstream origin master
 git push 							// 推送代码到远程仓库
 
 

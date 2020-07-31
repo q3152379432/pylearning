@@ -1,0 +1,8 @@
+powerpoint = comtypes.client.CreateObject("Powerpoint.Application")
+powerpoint.Visible = 1
+deck = powerpoint.Presentations.Open(inputFileName)
+deck.SaveAs(outputFileName,formatType) 		#formatType=32
+
+wdFormatPDF = 17
+xlsFormatPDF = 0
+pptFormatPDF = 32
